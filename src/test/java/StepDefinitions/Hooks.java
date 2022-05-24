@@ -8,24 +8,31 @@ import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 
+import static java.lang.System.*;
 
 
 public class Hooks {
 
     private static App app;
 
-    @Before
+    @Before(order = 1)
     public void setUp() {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         app = new App();
     }
-    @Before
+    @Before(order = 2)
     public void initTitle(Scenario scenario){
-        System.out.println("Start " + scenario.getName());
+        out.println("Start " + scenario.getName());
+    }
+    @Before(order = 2)
+    public void initData(Scenario scenario){
+        RestAssured.baseURI = getProperty("BASE_URL");
+        RestAssured.basePath = getProperty("BASE_PATH");
+        out.println("<<<<<<");
     }
     @After
     public void tearDown(Scenario scenario){
-        System.out.println("End " + scenario.getName() + scenario.getStatus());
+        out.println("End " + scenario.getName() + scenario.getStatus());
     }
 }
 
