@@ -1,9 +1,9 @@
-package config;
+package configuration.config;
 
 
+import configuration.model.EnvironmentList;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import model.EnvironmentList;
 
 
 @Data

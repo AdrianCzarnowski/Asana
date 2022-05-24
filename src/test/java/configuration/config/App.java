@@ -1,10 +1,10 @@
-package config;
+package configuration.config;
 
 
-import model.EnvironmentModel;
+import configuration.model.EnvironmentModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import reader.YamlReader;
+import configuration.reader.YamlReader;
 
 import java.util.List;
 import java.util.Map;

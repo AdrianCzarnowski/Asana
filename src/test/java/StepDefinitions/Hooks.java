@@ -1,6 +1,6 @@
 package StepDefinitions;
 
-import config.App;
+import configuration.config.App;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -10,7 +10,7 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 
 
 
-public class Hook {
+public class Hooks {
 
     private static App app;
 
