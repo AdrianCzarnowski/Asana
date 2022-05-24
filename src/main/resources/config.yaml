@@ -2,39 +2,14 @@ environment:
   prod:
     active: true
     BASE_URL: https://samples.openweathermap.org/
-    endpoint: data/2.5/weather
-    status_code: 200
-    header_name: name
-    name : Adrian
-    header_age: age
-    age: 20
-    param_city_tag: q
-    param_city_name: London,uk
-    param_id: appid
-    param_token: b1b15e88fa797225412429c1c50c122a1
-    load_time: 5000L
-    body_part_to_test: sys.country
-    country: GB
-
-
+    token: 1/1202329357930450:5e85650bbeba04ffc4847e1613e20699
 
 
   init:
     active: false
     BASE_URL: https://samples.openweathermap.org/
-    endpoint: data/2.5/weather
-    status_code: "200"
-    header_name: name
-    name : Adrian
-    header_age: age
-    age: 20
-    param_city_tag: q
-    param_city_name: London,uk
-    param_id: appid
-    param_token: b1b15e88fa797225412429c1c50c122a1
-    load_time: 5000L
-    body_part_to_test: sys.country
-    country: GB
+    token: 1/1202329357930450:5e85650bbeba04ffc4847e1613e20699
+
 
 
 
