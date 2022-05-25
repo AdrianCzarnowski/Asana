@@ -25,15 +25,6 @@ public class BaseTest {
                 .basePath(getProperty("ENDPOINT"));
         return requestSpecification;
     }
-    public RequestSpecification getPOSTRequestSpecification(){
-        requestSpecification = given()
-                .auth()
-                .oauth2(getProperty("token"))
-                .baseUri(getProperty("BASE_URL"));
-
-        return requestSpecification;
-    }
-
     public ResponseSpecification getResponseSpecification(){
         responseSpecification = RestAssured.expect().contentType(ContentType.JSON);
         return  responseSpecification;

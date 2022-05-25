@@ -27,8 +27,8 @@ public class RequestBuilder extends BaseTest {
                 "  }\n" +
                 " }\n";
 
-        requestSpecification = given().spec(getPOSTRequestSpecification());
-        response = requestSpecification.body(bodyRequest).post(getProperty("ENDPOINT"));
+        requestSpecification = given().spec(getRequestSpecification());
+        response = requestSpecification.body(bodyRequest).post();
         logger.info("POST response: " + response.prettyPrint());
         return response;
     }
