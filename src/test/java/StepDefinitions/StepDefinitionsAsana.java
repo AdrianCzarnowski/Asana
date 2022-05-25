@@ -5,13 +5,12 @@ import Model.Project;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import org.junit.Assert;
 import utils.RequestBuilder;
 
 
 import static java.lang.System.getProperty;
+import static org.junit.Assert.*;
 
 public class StepDefinitionsAsana extends BaseTest {
 
@@ -34,6 +33,6 @@ public class StepDefinitionsAsana extends BaseTest {
                 .then()
                 .spec(getResponseSpecification());
         JsonPath jsonPath = response.jsonPath();
-        Assert.assertEquals(jsonPath.get("data[0].name"), project.getName());
+        assertEquals(jsonPath.get("data[0].gid"), project.getGid());
     }
 }
