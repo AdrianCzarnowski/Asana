@@ -27,10 +27,7 @@ public class BaseTest {
     }
 
     public ResponseSpecification getResponseSpecification(){
-        responseSpecification = RestAssured.expect();
-        responseSpecification
-                .contentType(ContentType.JSON)
-                .statusCode(Integer.parseInt(getProperty("status_code")));
+        responseSpecification = RestAssured.expect().contentType(ContentType.JSON);
         return  responseSpecification;
     }
 }

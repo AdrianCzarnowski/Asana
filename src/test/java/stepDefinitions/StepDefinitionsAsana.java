@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import utils.RequestBuilder;
 
 
+import static java.lang.Integer.*;
 import static java.lang.System.getProperty;
 import static org.junit.Assert.*;
 
@@ -34,7 +35,8 @@ public class StepDefinitionsAsana extends BaseTest {
     public void user_is_able_to_see_response_with_projects_details() {
         response
                 .then()
-                .spec(getResponseSpecification());
+                .spec(getResponseSpecification())
+                .statusCode(parseInt(getProperty("status_code")));
         JsonPath jsonPath = response.jsonPath();
         assertEquals(jsonPath.get("data[0].gid"), project.getGid());
         logger.info("Unique gid: " + project.getGid());
