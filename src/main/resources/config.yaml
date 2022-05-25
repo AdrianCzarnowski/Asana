@@ -5,6 +5,9 @@ environment:
     BASE_PATH: /1.0
     ENDPOINT: /projects
     token: 1/1202329357930450:5e85650bbeba04ffc4847e1613e20699
+    gid: 1202329360234188
+    name: IT requests
+    resources_type: project
 
 
   init:
