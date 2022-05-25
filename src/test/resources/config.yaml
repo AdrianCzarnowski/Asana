@@ -9,6 +9,7 @@ environment:
     resources_type: project
     status_code: 200
     status_code_post: 201
+    body_request_json: src/test/resources/bodyRequest.json
 
 
 

@@ -5,6 +5,8 @@ import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+
 import static io.restassured.RestAssured.given;
 import static java.lang.System.*;
 
@@ -19,16 +21,8 @@ public class RequestBuilder extends BaseTest {
     }
     public Response sentPostRequestProjects() {
 
-        String bodyRequest = "{\n" +
-                "  \"data\": {\n" +
-                "    \"color\": \"light-red\",\n" +
-                "    \"name\": \"Adrian\",\n" +
-                "    \"team\": \"1202329452716104\"\n" +
-                "  }\n" +
-                " }\n";
-
         requestSpecification = given().spec(getRequestSpecification());
-        response = requestSpecification.body(bodyRequest).post();
+        response = requestSpecification.body(new File(getProperty("body_request_json"))).post();
         logger.info("POST response: " + response.prettyPrint());
         return response;
     }
