@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.RequestBuilder;
@@ -41,5 +42,15 @@ public class StepDefinitionsAsana extends BaseTest {
         assertEquals(jsonPath.get("data[0].gid"), project.getGid());
         logger.info("Unique gid: " + project.getGid());
         logger.info("Assertion passed");
+    }
+
+    @When("User perform POST")
+    public void userPerformPOST() {
+        response = requestBuilder.sentPostRequestProjects();
+    }
+
+    @Then("new project added")
+    public void new_project_added() {
+        Assert.assertEquals(201, response.getStatusCode());
     }
 }
