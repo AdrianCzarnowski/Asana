@@ -1,6 +1,6 @@
-package BaseTest;
+package baseTest;
 
-import Model.Project;
+import model.Project;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;

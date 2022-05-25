@@ -1,11 +1,13 @@
-package StepDefinitions;
+package stepDefinitions;
 
-import BaseTest.BaseTest;
-import Model.Project;
+import baseTest.BaseTest;
+import model.Project;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utils.RequestBuilder;
 
 
@@ -14,11 +16,12 @@ import static org.junit.Assert.*;
 
 public class StepDefinitionsAsana extends BaseTest {
 
+    private static Logger logger = LoggerFactory.getLogger("StepDefinitionsAsana.class");
     RequestBuilder requestBuilder = new RequestBuilder();
     @Given("I have project object")
     public void i_have_project_object() {
         project = new Project(getProperty("gid"), getProperty("resources_type"), getProperty("name"));
-
+        logger.info("project created");
 
     }
 
@@ -34,5 +37,7 @@ public class StepDefinitionsAsana extends BaseTest {
                 .spec(getResponseSpecification());
         JsonPath jsonPath = response.jsonPath();
         assertEquals(jsonPath.get("data[0].gid"), project.getGid());
+        logger.info("Unique gid: " + project.getGid());
+        logger.info("Assertion passed");
     }
 }
