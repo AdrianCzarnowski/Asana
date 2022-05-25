@@ -21,7 +21,7 @@ public class RequestBuilder extends BaseTest {
 
         String bodyRequest = "{\n" +
                 "  \"data\": {\n" +
-                "    \"color\": \"light-green\",\n" +
+                "    \"color\": \"light-red\",\n" +
                 "    \"name\": \"Adrian\",\n" +
                 "    \"team\": \"1202329452716104\"\n" +
                 "  }\n" +
