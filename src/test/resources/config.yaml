@@ -8,6 +8,8 @@ environment:
     name: IT requests
     resources_type: project
     status_code: 200
+    status_code_post: 201
+
 
 
   init:
@@ -19,6 +21,7 @@ environment:
     name: IT requests
     resources_type: project
     status_code: 200
+    status_code_post: 201
 
 
 
