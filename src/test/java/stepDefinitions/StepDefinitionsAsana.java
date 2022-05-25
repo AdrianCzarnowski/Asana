@@ -44,13 +44,14 @@ public class StepDefinitionsAsana extends BaseTest {
         logger.info("Assertion passed");
     }
 
-    @When("User perform POST")
-    public void userPerformPOST() {
+    @When("User perform POST request")
+    public void user_perform_POST_request() {
         response = requestBuilder.sentPostRequestProjects();
     }
 
     @Then("new project added")
     public void new_project_added() {
         Assert.assertEquals(parseInt(getProperty("status_code_post")), response.getStatusCode());
+        logger.info("Status code: " + response.getStatusCode());
     }
 }

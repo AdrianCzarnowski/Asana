@@ -6,5 +6,5 @@ Feature:  Asana Test
     Then  User is able to projects GID
 
   Scenario: Post project
-    When  User perform POST
+    When  User perform POST request
     Then  new project added
