@@ -18,7 +18,7 @@ public class RequestBuilder extends BaseTest {
     }
 //    public Response sentPostRequestProjects() {
 //
-//        String body = "{\n" +
+//        String bodyRequest = "{\n" +
 //                "  \"data\": {\n" +
 //                "    \"archived\": false,\n" +
 //                "    \"color\": \"light-green\",\n" +
@@ -30,7 +30,7 @@ public class RequestBuilder extends BaseTest {
 //                "      \"created_by\": {\n" +
 //                "        \"name\": \"Greg Sanchez\"\n" +
 //                "      },\n" +
-//                "      \"html_text\": \"<body>The project <strong>is</strong> moving forward according to plan...</body>\",\n" +
+//                "      \"html_text\": \"<bodyRequest>The project <strong>is</strong> moving forward according to plan...</bodyRequest>\",\n" +
 //                "      \"text\": \"The project is moving forward according to plan...\",\n" +
 //                "      \"title\": \"Status Update - Jun 15\"\n" +
 //                "    },\n" +
@@ -45,7 +45,7 @@ public class RequestBuilder extends BaseTest {
 //                "    \"due_date\": \"2019-09-15\",\n" +
 //                "    \"due_on\": \"2019-09-15\",\n" +
 //                "    \"followers\": \"12345,23456\",\n" +
-//                "    \"html_notes\": \"<body>These are things we need to purchase.</body>\",\n" +
+//                "    \"html_notes\": \"<bodyRequest>These are things we need to purchase.</bodyRequest>\",\n" +
 //                "    \"is_template\": false,\n" +
 //                "    \"name\": \"Stuff to buy\",\n" +
 //                "    \"notes\": \"These are things we need to purchase.\",\n" +
@@ -55,7 +55,7 @@ public class RequestBuilder extends BaseTest {
 //                "    \"team\": \"12345\"\n" +
 //                "  }\n";
 //        response = given()
-//                .contentType("application/json").when().body(body).post();
+//                .contentType("application/json").when().body(bodyRequest).post();
 //        logger.info("POST response: " + response.prettyPrint());
 //        return response;
 //    }
