@@ -1,9 +1,10 @@
 package BaseTest;
 
 import io.restassured.response.Response;
-import utils.RequestBuilder;
+import io.restassured.specification.RequestSpecification;
+
 
 public class BaseTest {
     protected Response response;
-    protected RequestBuilder requestBuilder;
+    public RequestSpecification requestSpecification;
 }

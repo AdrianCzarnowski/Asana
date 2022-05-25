@@ -20,16 +20,8 @@ public class Hooks {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
         app = new App();
     }
-    @Before(order = 2)
-    public void initTitle(Scenario scenario){
-        out.println("Start " + scenario.getName());
-    }
-    @Before(order = 2)
-    public void initData(Scenario scenario){
-        RestAssured.baseURI = getProperty("BASE_URL");
-        RestAssured.basePath = getProperty("BASE_PATH");
-        out.println("<<<<<<");
-    }
+
+
     @After
     public void tearDown(Scenario scenario){
         out.println("End " + scenario.getName() + scenario.getStatus());
