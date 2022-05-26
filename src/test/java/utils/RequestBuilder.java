@@ -40,5 +40,16 @@ public class RequestBuilder extends BaseTest {
         logger.info("Delete response: " + response.prettyPrint());
         return response;
     }
+    public Response sentPutProjectRequest(){
+        requestSpecification=
+                given()
+                        .spec(putRequestSpecification());
+        response =
+                requestSpecification
+                        .body(new File(getProperty("body_request_json")))
+                        .put();
+        logger.info("Update response: " + response.prettyPrint());
+        return response;
+    }
 
 }

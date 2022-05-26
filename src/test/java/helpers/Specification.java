@@ -29,6 +29,15 @@ public class Specification {
                 .basePath(getProperty("ENDPOINT")+getProperty("project_to_delete_gid"));
         return requestSpecification;
     }
+    public RequestSpecification putRequestSpecification(){
+        requestSpecification = given()
+                .auth()
+                .oauth2(getProperty("token"))
+                .baseUri(getProperty("BASE_URL"))
+                .basePath(getProperty("ENDPOINT")+getProperty("project_to_update_gid"));
+        return requestSpecification;
+    }
+
     public ResponseSpecification getResponseSpecification(){
         responseSpecification = RestAssured.expect().contentType(ContentType.JSON);
         return  responseSpecification;

@@ -10,7 +10,8 @@ environment:
     status_code: 200
     status_code_post: 201
     body_request_json: src/test/resources/bodyRequest.json
-    project_to_delete_gid: /1202329360234188
+    project_to_delete_gid: /1202341345666468
+    project_to_update_gid: /1202340949617820
 
 
 
@@ -26,6 +27,8 @@ environment:
     status_code_post: 201
     body_request_json: src/test/resources/bodyRequest.json
     project_to_delete_gid: /1202329360234188
+    project_to_update_gid: /1202340949617820
+
 
 
 

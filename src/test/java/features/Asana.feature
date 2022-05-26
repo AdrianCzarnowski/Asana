@@ -13,3 +13,8 @@ Feature:  Asana Test
     Given I have project to delete
     When User perform DELETE request
     Then Project is not available
+
+  Scenario: Update project
+    Given I have project to update
+    When User perform PUT request
+    Then Project is updated

@@ -11,7 +11,10 @@ import org.slf4j.LoggerFactory;
 import utils.RequestBuilder;
 
 
+import java.io.File;
+
 import static java.lang.Integer.*;
+import static java.lang.String.*;
 import static java.lang.System.getProperty;
 import static org.junit.Assert.*;
 
@@ -55,19 +58,37 @@ public class StepDefinitionsAsana extends BaseTest {
     }
 
     @Given("I have project to delete")
-    public void i_Have_Project_To_Delete() {
+    public void i_have_project_to_delete() {
         String projectGid = getProperty("project_to_delete_gid");
         logger.info("Project to delete gid: " + projectGid);
     }
 
     @When("User perform DELETE request")
-    public void user_Perform_DELETE_Request() {
+    public void user_perform_DELETE_request() {
         response = requestBuilder.sentDeleteProjectRequest();
     }
 
     @Then("Project is not available")
-    public void project_Is_Not_Available() {
+    public void project_is_not_available() {
         assertEquals(parseInt(getProperty("status_code")), response.getStatusCode());
         logger.info("Project deleted successfully");
     }
+
+    @Given("I have project to update")
+    public void i_have_project_to_update() {
+        project = new Project(getProperty("project_to_update_gid"), getProperty("resources_type"), getProperty("name"));
+        logger.info(valueOf(project));
+    }
+
+    @When("User perform PUT request")
+    public void user_perform_PUT_request() {
+        response = requestBuilder.sentPutProjectRequest();
+    }
+
+    @Then("Project is updated")
+    public void project_is_updated() {
+        assertEquals(parseInt(getProperty("status_code")), response.getStatusCode());
+    }
+
+
 }
