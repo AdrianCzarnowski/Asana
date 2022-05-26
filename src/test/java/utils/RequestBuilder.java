@@ -31,4 +31,14 @@ public class RequestBuilder extends BaseTest {
         logger.info("POST response: " + response.prettyPrint());
         return response;
     }
+    public Response sentDeleteProjectRequest(){
+        requestSpecification=
+                given()
+                        .spec(deleteRequestSpecification());
+        response =
+                requestSpecification.when().delete();
+        logger.info("Delete response: " + response.prettyPrint());
+        return response;
+    }
+
 }

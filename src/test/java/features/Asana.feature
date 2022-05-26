@@ -8,3 +8,8 @@ Feature:  Asana Test
   Scenario: Post project
     When  User perform POST request
     Then  new project added
+
+  Scenario: Delete project
+    Given I have project to delete
+    When User perform DELETE request
+    Then Project is not avaliable

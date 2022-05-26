@@ -54,4 +54,21 @@ public class StepDefinitionsAsana extends BaseTest {
         assertEquals(parseInt(getProperty("status_code_post")), response.getStatusCode());
         logger.info("Status code: " + response.getStatusCode());
     }
+
+    @Given("I have project to delete")
+    public void iHaveProjectToDelete() {
+        String projectGid = getProperty("project_to_delete_gid");
+        logger.info("Project to delete gid: " + projectGid);
+    }
+
+    @When("User perform DELETE request")
+    public void userPerformDELETERequest() {
+        response = requestBuilder.sentDeleteProjectRequest();
+    }
+
+    @Then("Project is not avaliable")
+    public void projectIsNotAvaliable() {
+        assertEquals(parseInt(getProperty("status_code")), response.getStatusCode());
+        logger.info("Project deleted successfully");
+    }
 }
