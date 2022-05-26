@@ -5,7 +5,7 @@ Feature:  Asana Test
     When User perform astana GET projects operation
     Then  User is able to projects GID
 
-  Scenario: Post project
+  Scenario: Create new project
     When  User perform POST request
     Then  new project added
 
