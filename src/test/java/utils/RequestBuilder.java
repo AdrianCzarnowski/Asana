@@ -34,7 +34,7 @@ public class RequestBuilder extends BaseTest {
     public Response sentDeleteProjectRequest(){
         requestSpecification=
                 given()
-                        .spec(deleteRequestSpecification());
+                        .spec(deleteOrPutRequestSpecification(getProperty("project_to_delete_gid")));
         response =
                 requestSpecification.when().delete();
         logger.info("Delete response: " + response.prettyPrint());
@@ -43,7 +43,7 @@ public class RequestBuilder extends BaseTest {
     public Response sentPutProjectRequest(){
         requestSpecification=
                 given()
-                        .spec(putRequestSpecification());
+                        .spec(deleteOrPutRequestSpecification(getProperty("project_to_update_gid")));
         response =
                 requestSpecification
                         .body(new File(getProperty("body_request_json")))
