@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
-import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.RequestBuilder;
@@ -56,18 +55,18 @@ public class StepDefinitionsAsana extends BaseTest {
     }
 
     @Given("I have project to delete")
-    public void iHaveProjectToDelete() {
+    public void i_Have_Project_To_Delete() {
         String projectGid = getProperty("project_to_delete_gid");
         logger.info("Project to delete gid: " + projectGid);
     }
 
     @When("User perform DELETE request")
-    public void userPerformDELETERequest() {
+    public void user_Perform_DELETE_Request() {
         response = requestBuilder.sentDeleteProjectRequest();
     }
 
-    @Then("Project is not avaliable")
-    public void projectIsNotAvaliable() {
+    @Then("Project is not available")
+    public void project_Is_Not_Available() {
         assertEquals(parseInt(getProperty("status_code")), response.getStatusCode());
         logger.info("Project deleted successfully");
     }

@@ -12,4 +12,4 @@ Feature:  Asana Test
   Scenario: Delete project
     Given I have project to delete
     When User perform DELETE request
-    Then Project is not avaliable
+    Then Project is not available
