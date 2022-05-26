@@ -12,18 +12,20 @@ import static java.lang.System.*;
 
 public class RequestBuilder extends BaseTest {
     private static Logger logger = LoggerFactory.getLogger("RequestBuilder.class");
+
     public Response sentGetRequestProjects() {
         response =
-        given()
-                .spec(getRequestSpecification())
-                .get();
+                given()
+                        .spec(getRequestSpecification())
+                        .get();
         logger.info("Get request specification send");
         return response;
     }
+
     public Response sentPostRequestProjects() {
         requestSpecification =
-        given()
-                .spec(getRequestSpecification());
+                given()
+                        .spec(getRequestSpecification());
         response =
                 requestSpecification
                         .body(new File(getProperty("body_request_json")))
@@ -31,8 +33,9 @@ public class RequestBuilder extends BaseTest {
         logger.info("POST response: " + response.prettyPrint());
         return response;
     }
-    public Response sentDeleteProjectRequest(){
-        requestSpecification=
+
+    public Response sentDeleteProjectRequest() {
+        requestSpecification =
                 given()
                         .spec(deleteOrPutRequestSpecification(getProperty("project_to_delete_gid")));
         response =
@@ -40,8 +43,9 @@ public class RequestBuilder extends BaseTest {
         logger.info("Delete response: " + response.prettyPrint());
         return response;
     }
-    public Response sentPutProjectRequest(){
-        requestSpecification=
+
+    public Response sentPutProjectRequest() {
+        requestSpecification =
                 given()
                         .spec(deleteOrPutRequestSpecification(getProperty("project_to_update_gid")));
         response =
