@@ -91,4 +91,14 @@ public class StepDefinitionsAsana extends BaseTest {
     }
 
 
+    @Given("I have project to create")
+    public void iHaveProjectToCreate() {
+
+    }
+
+    @Given("I have data to create new project")
+    public void iHaveDataToCreateNewProject() {
+        File bodyRequest = new File(getProperty("body_request_json"));
+        logger.info(bodyRequest.toString());
+    }
 }
