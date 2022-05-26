@@ -8,7 +8,7 @@ Feature:  Asana Test
   Scenario: Create new project
     Given I have data to create new project
     When  User perform POST request
-    Then  new project added
+    Then  New project added
 
   Scenario: Delete project
     Given I have project to delete

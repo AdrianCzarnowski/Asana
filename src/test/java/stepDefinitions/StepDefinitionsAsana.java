@@ -51,7 +51,7 @@ public class StepDefinitionsAsana extends BaseTest {
         response = requestBuilder.sentPostRequestProjects();
     }
 
-    @Then("new project added")
+    @Then("New project added")
     public void new_project_added() {
         assertEquals(parseInt(getProperty("status_code_post")), response.getStatusCode());
         logger.info("Status code: " + response.getStatusCode());
