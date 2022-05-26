@@ -13,7 +13,8 @@ public class Specification {
     protected Response response;
     public RequestSpecification requestSpecification;
     public ResponseSpecification responseSpecification;
-    public RequestSpecification getRequestSpecification(){
+
+    public RequestSpecification getRequestSpecification() {
         requestSpecification = given()
                 .auth()
                 .oauth2(getProperty("token"))
@@ -21,16 +22,18 @@ public class Specification {
                 .basePath(getProperty("ENDPOINT"));
         return requestSpecification;
     }
-    public RequestSpecification deleteOrPutRequestSpecification(String gid){
+
+    public RequestSpecification deleteOrPutRequestSpecification(String gid) {
         requestSpecification = given()
                 .auth()
                 .oauth2(getProperty("token"))
                 .baseUri(getProperty("BASE_URL"))
-                .basePath(getProperty("ENDPOINT")+gid);
+                .basePath(getProperty("ENDPOINT") + gid);
         return requestSpecification;
     }
-    public ResponseSpecification getResponseSpecification(){
+
+    public ResponseSpecification getResponseSpecification() {
         responseSpecification = RestAssured.expect().contentType(ContentType.JSON);
-        return  responseSpecification;
+        return responseSpecification;
     }
 }

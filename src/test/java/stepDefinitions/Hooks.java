@@ -21,9 +21,8 @@ public class Hooks {
         app = new App();
     }
 
-
     @After
-    public void tearDown(Scenario scenario){
+    public void tearDown(Scenario scenario) {
         out.println("End " + scenario.getName() + scenario.getStatus());
     }
 }
