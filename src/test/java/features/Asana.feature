@@ -15,7 +15,6 @@ Feature:  Asana Test
     When User perform PUT request
     Then Project is updated
 
-
   Scenario: Delete project
     Given I have project to delete
     When User perform DELETE request
